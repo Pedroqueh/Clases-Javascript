@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio DOM</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script>
+        //Se crea una variable global.
+    var global = "asd";
+        // se crea la funcion que modificara el contenido HTML del documento.
+    function cambiar(){
+        //Antes de cambiar el contenido, la funcion revisa si la variable global es la misma definida en el inicio, si es asi que cambie el documento y despues de cambiarlo, modifica el contenido de la variable global, para indicar que ya cambio.
+        if(global == "asd"){ 
+        document.getElementById("caja").style.backgroundColor ="#FF0000";
+        document.getElementById("caja").style.borderColor = "#0000ff";
+        document.getElementById("nombre").innerHTML = "";
+        document.getElementById("boton").innerHTML = "Volver";
+        document.getElementById("colorDiv").style.color = "#fff";
+        document.getElementById("colorDiv").innerHTML = "Pedro Pablo Soto Martínez";
+        global = "dsa";
+        }
+        //de lo contrario revisa si el contenido inicial de la variable global es el mismo, si no lo es entonces que recarge la pagina.
+        else{
+            location.reload();
+        }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h2 id="nombre">Pedro Pablo Soto Martínez</h2>
+    </header>
+    <div id="caja">
+        <p id="colorDiv"></p>
+    </div>
+    <div id="centrar">
+        <button id="boton" onClick="cambiar()">Cambiar     Color</button>
+    </div>
+</body>
+</html>

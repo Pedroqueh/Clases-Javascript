@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina 1</title>
+    <script>
+        //Creamos la funcion que abrira el popUp
+       function abrePopUp(){
+           //Creacion de variables
+           
+           //Creamos dos variables, que reciben y almacenan el tamaño (ancho y alto) de la pantalla del usuario (quien visualiza) 
+            var ancho= screen.width * (1/2);
+            var alto= screen.height * (1/2);
+           //Se obtiene los valores con los atributos .width y . height y se dividen por 4, de esta manera queda centrado.
+            var left = screen.width * (1/4);
+            var top = screen.height * (1/4);
+            //Se crea una variable v1 que representara la ventana popUp y se crea a partir del windows.open que dependera de los siguientes parametros. 1-Enlace, 2-Titulo del enlace,3- Si tendra scrollbar, 4-Width: ancho que se obtiene a partir de las primeras variables, 5- Alto: que tambien se obtiene de las primeras variables. 6-Top y 7-Left: que se predefine para que la ventana este centrada.
+            var v1 = window.open("dos.html", "Pagina 2", 'scrollbars=yes, width=' + ancho + ', height=' + alto + ', top=' + top + ', left=' + left);
+            
+           //Se crea la funcion que cerrara la ventana 2 (abierta por popUp), se le indica que se cerrara al pasar 3 segundos (3000 milisegundos) y que se redireccionara al documento tres.html
+            setTimeout(function(){
+                v1.close(); 
+                window.location = "tres.html";
+            }, 3000);
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <h1>Página 1</h1>
+    <!--Se crea un vinculo que al hacer clic llama a la función abrePopUp lo que provoca todo lo anterior --->
+    <a href="#" onclick="abrePopUp()">Haga click para abrir la página 2 en popup</a>
+</body>
+</html>

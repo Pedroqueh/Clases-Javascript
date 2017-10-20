@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cambia colores</title>
+<script>
+    
+    var txtGlobal = "txt2";
+    var fonGlobal = "fon1";
+    function colorFondo(color){
+         var idRadioSel = document.querySelector('input[name="fon"]:checked').value; //Averigua el radio button seleccionado
+    
+    if (!document.fgColor){
+        document.fgColor = "#000"; 
+        //Si color de texto no ha sido asignado, por defecto será de color negro
+        }
+    if (document.fgColor != color){ 
+        //Cuando el color de texto no es el mismo, guarda en la variable global (fonGlobal) el último radio seleccionado y cambia color de fondo
+        document.bgColor=color;
+        fonGlobal = idRadioSel;
+    }
+    else{
+        radiobtn = document.getElementById(fonGlobal); 
+        //Si es el mismo color, vuelve a selecionar el radio anterior y NO cambia color de fondo
+        radiobtn.checked = true;
+        alert("El color de fondo no puede ser el mismo que el color del texto");
+        }
+    }
+    function colorTexto(color){
+        var idRadioSel = document.querySelector('input[name="texto"]:checked').value; //Averigua el Radio Buttton seleccionado
+    
+    if (!document.bgColor){
+        document.bgColor = "#fff"; 
+        //Si color de fondo no ha sido asignado, por defecto será de color blanco
+        }
+    if (document.bgColor != color){
+        //Cuando el color de fondo no coincide, guarda en variable global (txtGlobal) el último radio seleccionado y cambia color de texto
+        document.fgColor=color;
+        txtGlobal = idRadioSel;
+    }
+    else {
+        radiobtn = document.getElementById(txtGlobal); 
+        //Si es el mismo color, vuelve a selecionar el radio anterior y NO cambia color de texto
+        radiobtn.checked = true;
+        alert("El color del texto no puede ser el mismo que el color del fondo");
+    }
+    
+    }
+</script>
+</head>
+<body>
+<!--Se agrega para correcto funcionamiento id's y values a cada radio button de la página -->
+<div class="grupo1">
+<h1>Color de fondo</h1>
+<input type="radio" value="fon1" id="fon1" checked="checked" name="fon"  onchange="colorFondo('#fff');" />
+Blanco <br />
+<input type="radio" value="fon2" id="fon2" name="fon" onchange="colorFondo('#000');" />
+Negro <br />
+<input type="radio" value="fon3" id="fon3" name="fon" onchange="colorFondo('#f00');" />
+Rojo <br />
+<input type="radio" value="fon4" id="fon4" name="fon" onchange="colorFondo('#0f0');" />
+Verde <br />
+<input type="radio" value="fon5" id="fon5" name="fon" onchange="colorFondo('#00f');" />
+Azul 
+</div>
+    
+<div class="grupo2">
+<h1>Color de texto</h1>
+<input type="radio" value="txt1" id="txt1" name="texto" onchange="colorTexto('#fff');" />
+Blanco <br />
+<input type="radio" value="txt2" id="txt2" name="texto" checked="checked" onchange="colorTexto('#000');" />
+Negro <br />
+<input type="radio" value="txt3" id="txt3" name="texto" onchange="colorTexto('#f00');" />
+Rojo <br />
+<input type="radio" value="txt4" id="txt4" name="texto" onchange="colorTexto('#0f0');" />
+Verde <br />
+<input type="radio" value="txt5" id="txt5" name="texto" onchange="colorTexto('#00f');" />
+Azul 
+</div>
+</body>
+</html>

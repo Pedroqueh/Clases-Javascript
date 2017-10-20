@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Primer Documento</title>
+    
+    <script>
+        function abrePopUp(){
+            var ancho= screen.width * (1/4);
+            var alto= screen.height * (1/4);            
+            var left = 700;
+            var top = 300;
+            
+            var v1 = window.open("/segundo-documento.html", "Segundo Documento", 'scrollbars=yes, width=' + ancho + ', height=' + alto + ', top=' + top + ', left=' + left);
+            
+            setTimeout(function(){
+                v1.close(); 
+                window.location = "/tercer-documento.html";
+            }, 3000);
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <h1>Primer Documento</h1>
+    <strong><a href="#" onclick="abrePopUp()">Haga click para abrir segundo documento en popup</a></strong>
+</body>
+</html>

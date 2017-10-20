@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+    <script>
+        function matrices(){
+        var frutas=              ['Manzanas','Peras','Sandías','Platanos','Guanábana','Uvas','arandano'];
+            var larga = frutas.sort(function (a, b){
+                return b.length - a.length; 
+            })[0];
+            document.write(larga + " " +larga.length);
+        };
+    </script>
+</head>
+<body onLoad= "matrices()">
+    
+</body>
+</html>

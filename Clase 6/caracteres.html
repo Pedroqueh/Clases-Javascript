@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajo 2</title>
+    <script>
+        //Se crea la funcion
+        function cantidadPalabras(){
+            /*Creamos dos variables una que almacenara el contenido del prompt y otra que sera el arreglo que contenga cada palabra escrita en el prompt
+            */
+            var texto = prompt ("Ingresa más de 10 palabras");
+            //al momento de definir la variable arreglo le damos una especificación con el .split que dividira y creara cada espacio del arreglo con un elemento escrito en el prompt a partir de un espacio.
+            var arreglo = texto.split(" ");
+            //Se crea un if para verificar que lo ingresado en el prompt sea de un largo mayor de 10, es decir, de 10 palabras separadas por un espacio, de lo contrario vuelve a ejecutar la funcion
+            if (arreglo.length < 10)
+                {
+                    alert("Deben ser mínimo 10 palabras");
+                    cantidadPalabras();
+                    
+                }
+            else
+            {
+                //Se crea una iteración a partir de un for con el fin de recorrer cada posicion del arreglo que fue generado anteriormente a través del prompt y se escribe en el documento cada uno del contenido que hay en cada posición del arreglo
+                for(i=0; i <= arreglo.length; i++){
+                    if (arreglo[i])
+                    {
+                        document.write(i + ") Palabra: "+ arreglo[i] + ". Cantidad de caracteres: " + arreglo[i].length + "<br/>");
+                    }
+                }    
+            }
+        }
+    </script>
+</head>
+<body onLoad="cantidadPalabras()">
+    
+</body>
+</html>

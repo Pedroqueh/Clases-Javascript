@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contar Palabras</title>
+    <script>
+        function cuentameUna() {
+        var frase =prompt("Escriba un párrafo de al menos 10 palabras");
+        var palabras = frase.split(" ");
+        if(palabras.length < 10){
+                alert("Son muy pocas palabras");
+                cuentameUna();
+            }else{
+                palabras.forEach(function(obj,pos){
+                    document.write(obj + " tiene "+ obj.length + " caracteres<br>");
+                }
+            )}
+        }
+    </script>
+</head>
+<body onload="cuentameUna()">
+    
+</body>
+</html>
